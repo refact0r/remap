@@ -1,0 +1,207 @@
+{
+	"name": "remap",
+	"displayName": "remap",
+	"description": "",
+	"publisher": "refact0r",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.54.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/refact0r/remap.git"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "remap.togglenavmode",
+				"category": "remap",
+				"title": "Toggle navigation mode"
+			},
+			{
+				"command": "remap.toggleselectmode",
+				"category": "remap",
+				"title": "Toggle select mode"
+			},
+			{
+				"command": "remap.showmode",
+				"category": "remap",
+				"title": "Show mode"
+			}
+		],
+		"keybindings": [
+			{
+				"key": "Escape",
+				"command": "remap.togglenavmode"
+			},
+			{
+				"key": "i",
+				"command": "cursorUp",
+				"when": "config.remap.mode == 1"
+			},
+			{
+				"key": "j",
+				"command": "cursorLeft",
+				"when": "config.remap.mode == 1"
+			},
+			{
+				"key": "k",
+				"command": "cursorDown",
+				"when": "config.remap.mode == 1"
+			},
+			{
+				"key": "l",
+				"command": "cursorRight",
+				"when": "config.remap.mode == 1"
+			},
+			{
+				"key": "u",
+				"command": "cursorWordLeft",
+				"when": "config.remap.mode == 1"
+			},
+			{
+				"key": "o",
+				"command": "cursorWordRight",
+				"when": "config.remap.mode == 1"
+			},
+			{
+				"key": "h",
+				"command": "cursorHome",
+				"when": "config.remap.mode == 1"
+			},
+			{
+				"key": ";",
+				"command": "cursorEnd",
+				"when": "config.remap.mode == 1"
+			},
+			{
+				"key": "a",
+				"command": "remap.toggleselectmode",
+				"when": "config.remap.mode > 0"
+			},
+			{
+				"key": "s",
+				"command": "workbench.action.files.save",
+				"when": "config.remap.mode > 0"
+			},
+			{
+				"key": "d",
+				"command": "deleteLeft",
+				"when": "config.remap.mode > 0"
+			},
+			{
+				"key": "f",
+				"command": "enter",
+				"when": "config.remap.mode > 0"
+			},
+			{
+				"key": "g",
+				"command": "workbench.action.gotoLine",
+				"when": "config.remap.mode > 0"
+			},
+			{
+				"key": "q",
+				"command": "workbench.action.files.save",
+				"when": "config.remap.mode > 0"
+			},
+			{
+				"key": "z",
+				"command": "undo",
+				"when": "config.remap.mode > 0"
+			},
+			{
+				"key": "x",
+				"command": "redo",
+				"when": "config.remap.mode > 0"
+			},
+			{
+				"key": "c",
+				"command": "editor.action.clipboardCopyAction",
+				"when": "config.remap.mode > 0"
+			},
+			{
+				"key": "v",
+				"command": "editor.action.clipboardPasteAction",
+				"when": "config.remap.mode > 0"
+			},
+			{
+				"key": "b",
+				"command": "editor.action.clipboardCutAction",
+				"when": "config.remap.mode > 0"
+			},
+			{
+				"key": ",",
+				"command": "editor.action.outdentLines",
+				"when": "config.remap.mode > 0"
+			},
+			{
+				"key": ".",
+				"command": "editor.action.indentLines",
+				"when": "config.remap.mode > 0"
+			}
+		],
+		"configuration": {
+			"title": "Remap",
+			"properties": {
+				"remap.mode": {
+					"type": "number",
+					"default": 0,
+					"description": "Current mode."
+				},
+				"remap.changeStatusBarColor": {
+					"type": "boolean",
+					"default": true,
+					"description": "Changes color of status bar based on mode."
+				},
+				"remap.changeStatusBarText": {
+					"type": "boolean",
+					"default": true,
+					"description": "Changes text in status bar based on mode."
+				},
+				"remap.normalModeColor": {
+					"type": "string",
+					"default": "",
+					"description": "Color of status bar while in normal mode."
+				},
+				"remap.navigationModeColor": {
+					"type": "string",
+					"default": "#1bddcd90",
+					"description": "Color of status bar while in navigation mode."
+				},
+				"remap.selectModeColor": {
+					"type": "string",
+					"default": "#7f1bdd90",
+					"description": "Color of status bar while in select mode."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.54.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.19.0",
+		"@typescript-eslint/eslint-plugin": "^4.14.1",
+		"@typescript-eslint/parser": "^4.14.1",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"typescript": "^4.1.3",
+		"vscode-test": "^1.5.0"
+	}
+}
