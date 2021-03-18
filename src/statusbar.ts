@@ -8,16 +8,16 @@ export default class StatusBar {
     public constructor(prevColorConfig: vscode.WorkspaceConfiguration) {
         this.item = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Left);
         this.item.show()
-        this.item.text = "-- NORMAL --";
+        this.item.text = "-- EDIT --";
         this.config = vscode.workspace.getConfiguration();
         this.prevColorConfig = prevColorConfig;
     }
 
     public statusBarColorMode(mode: number) {
-        let color: string = String(vscode.workspace.getConfiguration('remap').get('normalModeColor'));;
+        let color: string = String(vscode.workspace.getConfiguration('remap').get('editModeColor'));;
         if (mode === 0) {
         } else if (mode === 1) {
-            color = String(vscode.workspace.getConfiguration('remap').get('navigationModeColor'))
+            color = String(vscode.workspace.getConfiguration('remap').get('normalModeColor'))
         } else if (mode === 2) {
             color = String(vscode.workspace.getConfiguration('remap').get('selectModeColor'));
         }
@@ -34,9 +34,9 @@ export default class StatusBar {
 
     public statusBarTextMode(mode: number) {
         if (mode === 0) {
-            this.item.text = "-- NORMAL --";
+            this.item.text = "-- EDIT --";
         } else if (mode === 1) {
-            this.item.text = "-- NAVIGATION --";
+            this.item.text = "-- NORMAL --";
         } else if (mode === 2) {
             this.item.text = "-- SELECT --";
         }

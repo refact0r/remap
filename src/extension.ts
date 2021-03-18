@@ -11,15 +11,15 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const app = new Remap(prevColorConfig);
 
-	context.subscriptions.push(vscode.commands.registerCommand('remap.showmode', () => {
+	context.subscriptions.push(vscode.commands.registerCommand('remap.showMode', () => {
 		vscode.window.showInformationMessage(String(app.mode));
 	}));
 
-	context.subscriptions.push(vscode.commands.registerCommand('remap.togglenavmode', () => {
-		app.toggleNavMode();
+	context.subscriptions.push(vscode.commands.registerCommand('remap.toggleNormalMode', () => {
+		app.toggleNormalMode();
 	}));
 
-	context.subscriptions.push(vscode.commands.registerCommand('remap.toggleselectmode', () => {
+	context.subscriptions.push(vscode.commands.registerCommand('remap.toggleSelectMode', () => {
 		app.toggleSelectMode();
 	}));
 }
