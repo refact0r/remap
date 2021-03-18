@@ -3,7 +3,7 @@
 	"displayName": "remap",
 	"description": "",
 	"publisher": "refact0r",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.54.0"
 	},
@@ -21,17 +21,17 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "remap.togglenavmode",
+				"command": "remap.toggleNormalMode",
 				"category": "remap",
-				"title": "Toggle navigation mode"
+				"title": "Toggle normal mode"
 			},
 			{
-				"command": "remap.toggleselectmode",
+				"command": "remap.toggleSelectMode",
 				"category": "remap",
 				"title": "Toggle select mode"
 			},
 			{
-				"command": "remap.showmode",
+				"command": "remap.showMode",
 				"category": "remap",
 				"title": "Show mode"
 			}
@@ -39,7 +39,7 @@
 		"keybindings": [
 			{
 				"key": "Escape",
-				"command": "remap.togglenavmode"
+				"command": "remap.toggleNormalMode"
 			},
 			{
 				"key": "i",
@@ -83,7 +83,7 @@
 			},
 			{
 				"key": "a",
-				"command": "remap.toggleselectmode",
+				"command": "remap.toggleSelectMode",
 				"when": "config.remap.mode > 0"
 			},
 			{
@@ -165,15 +165,15 @@
 					"default": true,
 					"description": "Changes text in status bar based on mode."
 				},
-				"remap.normalModeColor": {
+				"remap.editModeColor": {
 					"type": "string",
 					"default": "",
-					"description": "Color of status bar while in normal mode."
+					"description": "Color of status bar while in edit mode."
 				},
-				"remap.navigationModeColor": {
+				"remap.normalModeColor": {
 					"type": "string",
 					"default": "#1bddcd90",
-					"description": "Color of status bar while in navigation mode."
+					"description": "Color of status bar while in normal mode."
 				},
 				"remap.selectModeColor": {
 					"type": "string",

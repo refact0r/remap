@@ -10,13 +10,13 @@ export default class Remap {
         this.mode = Number(vscode.workspace.getConfiguration('remap').get('mode'));
     }
 
-    public toggleNavMode() {
+    public toggleNormalMode() {
         let config: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('remap');
         let mode: number = Number(config.get('mode'));
         if (mode < 2) {
             mode = 1 - mode;
-            } else if (mode >= 2) {
-                mode = 1;
+        } else if (mode >= 2) {
+            mode = 0;
         }
         this.mode = mode;
         config.update('mode', mode, true);
