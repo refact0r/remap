@@ -13,11 +13,11 @@ Currently, Remap is not published on the VSCode extension marketplace. To instal
 
 ## Usage
 
-When you first enable the extension, you are in `Edit mode`. In this mode, you can type and use your keyboard normally. `Normal mode` is the main mode of Remap and can be toggled on or off with `Esc` by default. (I recommend disabling `Capslock` and binding it to `Esc` using something like Autohotkey). 
+When you first enable the extension, you are in Edit mode. In this mode, you can type and use your keyboard normally. Normal mode is the main mode of Remap and can be toggled on or off with `Esc` by default. (I recommend disabling `Capslock` and binding it to `Esc` using something like Autohotkey). 
 
-Once `Normal mode` is enabled, you can move the cursor with `i`, `j`, `k`, `l`; undo and redo with `z` and `x`; copy, paste, and cut with `c`, `v`, and `b`; indent and unindent with `,` and `.`, and much more.
+Once Normal mode is enabled, you can move the cursor with `i`, `j`, `k`, `l`; undo and redo with `z` and `x`; copy, paste, and cut with `c`, `v`, and `b`; indent and unindent with `,` and `.`, and much more.
 
-`Select mode` is used for selecting a block of text. To toggle it on or off, press `a` while in `Normal mode`. Inside select mode, you can move the cursor similarly to `Normal mode`, except that all the text will be selected as you move. You can go straight to `Edit mode` by pressing `Esc` again.
+Select mode is used for selecting a block of text. To toggle it on or off, press `a` while in Normal mode. Inside select mode, you can move the cursor similarly to `Normal mode`, except that all the text will be selected as you move. You can go straight to Edit mode by pressing `Esc` again.
 
 ## Extension Settings
 
@@ -26,3 +26,6 @@ This extension contributes the following settings:
 * `remap.mode`: The current mode. `0` is edit mode, `1` is normal mode, and `2` is select mode.
 * `remap.changeStatusBarText`: When enabled, the extension will add a text item in the status bar that will show the current mode.
 * `remap.changeStatusBarColor`: When enabled, the extension will change the color of the status bar based on the current mode.
+* `remap.editModeColor`: The color of the status bar while in Edit mode when `remap.changeStatusBarColor` is enabled.
+* `remap.normalModeColor`: The color of the status bar while in Normal mode when `remap.changeStatusBarColor` is enabled.
+* `remap.selectModeColor`: The color of the status bar while in Select mdoe when `remap.changeStatusBarColor` is enabled.
