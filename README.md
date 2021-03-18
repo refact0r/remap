@@ -5,6 +5,7 @@ Remap is a VSCode extension that takes common functions and puts them within dif
 ## Installation
 
 Currently, Remap is not published on the VSCode extension marketplace. To install:
+
 1. Download the .vsix file.
 2. Select "Extensions" in VSCode.
 3. Open the "More Action" menu (three dots on the top) and click "Install from VSIX…"
