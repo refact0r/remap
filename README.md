@@ -1,44 +1,28 @@
 # Remap
 
-Remap is a VSCode extension that takes common functions and puts them within different modes that can be quickly toggled on or off. No more holding down ctrl or moving your hand to the arrow keys! This was mostly started because I wanted to learn how to make a Vscode extension and I wasn't very happy with Vim's keybinds.
-
-## Features
-
-Remap functions similarly to Vscode Vim, but it places functions in positions that actually make sense and groups similar functions together. For example, to move the cursor up and down, you use IJKL, which is much more intuitive that the HJKL of Vim.
-
-
+Remap is a VSCode extension that takes common functions and puts them within different modes that can be quickly toggled on or off. It is similar to Vscode Vim, but it places functions in positions that actually make sense and groups similar functions together. No more holding down ctrl or moving your hand to the arrow keys!
 
 ## Installation
 
+Currently, Remap is not published on the VSCode extension marketplace. To install:
+1. Download the .vsix file.
+2. Select "Extensions" in VSCode.
+3. Open the "More Action" menu (three dots on the top) and click "Install from VSIX…"
+4. Find the downloaded .vsix file and select.
+5. Reload VSCode.
 
+## Usage
+
+When you first enable the extension, you are in `Edit mode`. In this mode, you can type and use your keyboard normally. `Normal mode` is the main mode of Remap and can be toggled on or off with `Esc` by default. (I recommend disabling `Capslock` and binding it to `Esc` using something like Autohotkey). 
+
+Once `Normal mode` is enabled, you can move the cursor with `i`, `j`, `k`, `l`; undo and redo with `z` and `x`; copy, paste, and cut with `c`, `v`, and `b`; indent and unindent with `,` and `.`, and much more.
+
+`Select mode` is used for selecting a block of text. To toggle it on or off, press `a` while in `Normal mode`. Inside select mode, you can move the cursor similarly to `Normal mode`, except that all the text will be selected as you move. You can go straight to `Edit mode` by pressing `Esc` again.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
 This extension contributes the following settings:
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+* `remap.mode`: The current mode. `0` is edit mode, `1` is normal mode, and `2` is select mode.
+* `remap.changeStatusBarText`: When enabled, the extension will add a text item in the status bar that will show the current mode.
+* `remap.changeStatusBarColor`: When enabled, the extension will change the color of the status bar based on the current mode.
