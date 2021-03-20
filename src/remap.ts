@@ -162,23 +162,23 @@ export default class Remap {
 
     public paste() {
         if (this.mode === 1) {
-            vscode.commands.executeCommand('editor.action.clipboardCopyAction');
+            vscode.commands.executeCommand('editor.action.clipboardPasteAction');
         } else if (this.mode === 2) {
-            vscode.commands.executeCommand('editor.action.clipboardCopyAction');
+            vscode.commands.executeCommand('editor.action.clipboardPasteAction');
             this.updateMode(1);
         } else if (this.mode === 3) {
-            vscode.commands.executeCommand('editor.action.clipboardCopyAction');
+            vscode.commands.executeCommand('editor.action.clipboardPasteAction');
         }
     }
 
     public cut() {
         if (this.mode === 1) {
-            vscode.commands.executeCommand('editor.action.clipboardCopyAction');
+            vscode.commands.executeCommand('editor.action.clipboardCutAction');
         } else if (this.mode === 2) {
-            vscode.commands.executeCommand('editor.action.clipboardCopyAction');
+            vscode.commands.executeCommand('editor.action.clipboardCutAction');
             this.updateMode(1);
         } else if (this.mode === 3) {
-            vscode.commands.executeCommand('editor.action.clipboardCopyAction');
+            vscode.commands.executeCommand('editor.action.clipboardCutAction');
         }
     }
 
