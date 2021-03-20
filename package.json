@@ -1,7 +1,7 @@
 {
 	"name": "remap",
-	"displayName": "remap",
-	"description": "",
+	"displayName": "Remap",
+	"description": "Faster and more efficient keybindings",
 	"publisher": "refact0r",
 	"version": "0.0.2",
 	"engines": {
@@ -21,19 +21,88 @@
 	"contributes": {
 		"commands": [
 			{
+				"command": "remap.showMode",
+				"category": "Remap",
+				"title": "Show mode"
+			},
+			{
 				"command": "remap.toggleNormalMode",
-				"category": "remap",
+				"category": "Remap",
 				"title": "Toggle normal mode"
 			},
 			{
 				"command": "remap.toggleSelectMode",
-				"category": "remap",
+				"category": "Remap",
 				"title": "Toggle select mode"
 			},
 			{
-				"command": "remap.showMode",
-				"category": "remap",
-				"title": "Show mode"
+				"command": "remap.toggleDeleteMode",
+				"category": "Remap",
+				"title": "Toggle delete mode"
+			},
+			{
+				"command": "remap.up",
+				"title": ""
+			},
+			{
+				"command": "remap.left",
+				"title": ""
+			},
+			{
+				"command": "remap.down",
+				"title": ""
+			},
+			{
+				"command": "remap.right",
+				"title": ""
+			},
+			{
+				"command": "remap.leftWord",
+				"title": ""
+			},
+			{
+				"command": "remap.rightWord",
+				"title": ""
+			},
+			{
+				"command": "remap.lineStart",
+				"title": ""
+			},
+			{
+				"command": "remap.lineEnd",
+				"title": ""
+			},
+			{
+				"command": "remap.newLine",
+				"title": ""
+			},
+			{
+				"command": "remap.undo",
+				"title": ""
+			},
+			{
+				"command": "remap.redo",
+				"title": ""
+			},
+			{
+				"command": "remap.copy",
+				"title": ""
+			},
+			{
+				"command": "remap.paste",
+				"title": ""
+			},
+			{
+				"command": "remap.cut",
+				"title": ""
+			},
+			{
+				"command": "remap.outdent",
+				"title": ""
+			},
+			{
+				"command": "remap.indent",
+				"title": ""
 			}
 		],
 		"keybindings": [
@@ -43,43 +112,43 @@
 			},
 			{
 				"key": "i",
-				"command": "cursorUp",
-				"when": "config.remap.mode == 1"
+				"command": "remap.up",
+				"when": "config.remap.mode > 0"
 			},
 			{
 				"key": "j",
-				"command": "cursorLeft",
-				"when": "config.remap.mode == 1"
+				"command": "remap.left",
+				"when": "config.remap.mode > 0"
 			},
 			{
 				"key": "k",
-				"command": "cursorDown",
-				"when": "config.remap.mode == 1"
+				"command": "remap.down",
+				"when": "config.remap.mode > 0"
 			},
 			{
 				"key": "l",
-				"command": "cursorRight",
-				"when": "config.remap.mode == 1"
+				"command": "remap.right",
+				"when": "config.remap.mode > 0"
 			},
 			{
 				"key": "u",
-				"command": "cursorWordLeft",
-				"when": "config.remap.mode == 1"
+				"command": "remap.leftWord",
+				"when": "config.remap.mode > 0"
 			},
 			{
 				"key": "o",
-				"command": "cursorWordRight",
-				"when": "config.remap.mode == 1"
+				"command": "remap.rightWord",
+				"when": "config.remap.mode > 0"
 			},
 			{
 				"key": "h",
-				"command": "cursorHome",
-				"when": "config.remap.mode == 1"
+				"command": "remap.lineStart",
+				"when": "config.remap.mode > 0"
 			},
 			{
 				"key": ";",
-				"command": "cursorEnd",
-				"when": "config.remap.mode == 1"
+				"command": "remap.lineEnd",
+				"when": "config.remap.mode > 0"
 			},
 			{
 				"key": "a",
@@ -93,12 +162,12 @@
 			},
 			{
 				"key": "d",
-				"command": "deleteLeft",
+				"command": "remap.toggleDeleteMode",
 				"when": "config.remap.mode > 0"
 			},
 			{
 				"key": "f",
-				"command": "enter",
+				"command": "remap.newLine",
 				"when": "config.remap.mode > 0"
 			},
 			{
@@ -128,27 +197,27 @@
 			},
 			{
 				"key": "c",
-				"command": "editor.action.clipboardCopyAction",
+				"command": "remap.copy",
 				"when": "config.remap.mode > 0"
 			},
 			{
 				"key": "v",
-				"command": "editor.action.clipboardPasteAction",
+				"command": "remap.paste",
 				"when": "config.remap.mode > 0"
 			},
 			{
 				"key": "b",
-				"command": "editor.action.clipboardCutAction",
+				"command": "remap.cut",
 				"when": "config.remap.mode > 0"
 			},
-			{
+			{	
 				"key": ",",
-				"command": "editor.action.outdentLines",
+				"command": "remap.outdent",
 				"when": "config.remap.mode > 0"
 			},
 			{
 				"key": ".",
-				"command": "editor.action.indentLines",
+				"command": "remap.indent",
 				"when": "config.remap.mode > 0"
 			}
 		],
@@ -183,6 +252,11 @@
 				"remap.selectModeColor": {
 					"type": "string",
 					"default": "#7f1bdd90",
+					"description": "Color of status bar while in select mode."
+				},
+				"remap.deleteModeColor": {
+					"type": "string",
+					"default": "#00000090",
 					"description": "Color of status bar while in select mode."
 				}
 			}

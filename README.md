@@ -14,7 +14,7 @@ Currently, Remap is not published on the VSCode extension marketplace. To instal
 
 ## Usage
 
-When you first enable the extension, you are in Edit mode. In this mode, you can type and use your keyboard normally. Normal mode is the main mode of Remap and can be toggled on or off with `Esc` by default. (I recommend disabling `Capslock` and binding it to `Esc` using something like Autohotkey). 
+When you first enable the extension, you are in Edit mode. In this mode, you can type and use your keyboard normally. Normal mode is the main mode of Remap and can be toggled on or off with `Esc` by default. (I recommend disabling `Capslock` and binding it to `Esc` using something like Autohotkey).
 
 Once Normal mode is enabled, you can move the cursor with `i`, `j`, `k`, `l`; undo and redo with `z` and `x`; copy, paste, and cut with `c`, `v`, `b`; indent and unindent with `,` and `.`, and much more.
 
