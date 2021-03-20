@@ -30,3 +30,13 @@ This extension contributes the following settings:
 * `remap.editModeColor`: The color of the status bar while in Edit mode when `remap.changeStatusBarColor` is enabled.
 * `remap.normalModeColor`: The color of the status bar while in Normal mode when `remap.changeStatusBarColor` is enabled.
 * `remap.selectModeColor`: The color of the status bar while in Select mdoe when `remap.changeStatusBarColor` is enabled.
+
+## Releases
+
+### Pre-release v0.1.0
+
+Basic functions now work.
+
+### Pre-release v0.0.1
+
+Initial commit.
