@@ -20,6 +20,8 @@ export default class StatusBar {
             color = String(vscode.workspace.getConfiguration('remap').get('normalModeColor'))
         } else if (mode === 2) {
             color = String(vscode.workspace.getConfiguration('remap').get('selectModeColor'));
+        } else if (mode === 3) {
+            color = String(vscode.workspace.getConfiguration('remap').get('deleteModeColor'));
         }
         if (color) {
             this.config.update('workbench.colorCustomizations', {
@@ -39,6 +41,8 @@ export default class StatusBar {
             this.item.text = "-- NORMAL --";
         } else if (mode === 2) {
             this.item.text = "-- SELECT --";
+        } else if (mode === 3) {
+            this.item.text = "-- DELETE --";
         }
     }
 }
