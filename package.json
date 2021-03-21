@@ -182,17 +182,17 @@
 			},
 			{
 				"key": "y",
-				"command": "actions.find",
+				"command": "remap.find",
 				"when": "config.remap.mode > 0"
 			},
 			{
 				"key": "z",
-				"command": "undo",
+				"command": "remap.undo",
 				"when": "config.remap.mode > 0"
 			},
 			{
 				"key": "x",
-				"command": "redo",
+				"command": "remap.redo",
 				"when": "config.remap.mode > 0"
 			},
 			{

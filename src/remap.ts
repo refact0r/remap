@@ -141,6 +141,11 @@ export default class Remap {
         }
     }
 
+    public find() {
+        vscode.commands.executeCommand('actions.find');
+        this.updateMode(0);
+    }
+
     public undo() {
         vscode.commands.executeCommand('undo');
     }
