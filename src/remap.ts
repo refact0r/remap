@@ -188,10 +188,10 @@ export default class Remap {
     }
 
     public outdent() {
-        vscode.commands.executeCommand('editor.action.indentLines');
+        vscode.commands.executeCommand('editor.action.outdentLines');
     }
 
     public indent() {
-        vscode.commands.executeCommand('editor.action.outdentLines');
+        vscode.commands.executeCommand('editor.action.indentLines');
     }
 }
