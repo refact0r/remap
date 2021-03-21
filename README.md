@@ -33,9 +33,13 @@ This extension contributes the following settings:
 
 ## Releases
 
+### Pre-release v0.1.2
+
+More bugfixes and pressing delete while in select mode will now delete selection.
+
 ### Pre-release v0.1.1
 
-Minor Bugfixes.
+Minor bugfixes.
 
 ### Pre-release v0.1.0
 
