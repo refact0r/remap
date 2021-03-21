@@ -63,6 +63,10 @@ export function activate(context: vscode.ExtensionContext) {
 		app.newLine(); 
 	}));
 
+	context.subscriptions.push(vscode.commands.registerCommand('remap.find', () => {
+		app.find();
+	}));
+
 	context.subscriptions.push(vscode.commands.registerCommand('remap.undo', () => {
 		app.undo();
 	}));
