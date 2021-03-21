@@ -33,6 +33,10 @@ This extension contributes the following settings:
 
 ## Releases
 
+### Pre-release v0.1.1
+
+Minor Bugfixes.
+
 ### Pre-release v0.1.0
 
 Basic functions now work.
