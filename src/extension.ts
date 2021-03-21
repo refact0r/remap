@@ -16,15 +16,15 @@ export function activate(context: vscode.ExtensionContext) {
 	}));
 
 	context.subscriptions.push(vscode.commands.registerCommand('remap.toggleNormalMode', () => {
-		app.toggleNormalMode();
+		app.normal();
 	}));
 
 	context.subscriptions.push(vscode.commands.registerCommand('remap.toggleSelectMode', () => {
-		app.toggleSelectMode();
+		app.select();
 	}));
 
 	context.subscriptions.push(vscode.commands.registerCommand('remap.toggleDeleteMode', () => { 
-		app.toggleDeleteMode(); 
+		app.delete(); 
 	}));
 
 	context.subscriptions.push(vscode.commands.registerCommand('remap.up', () => {

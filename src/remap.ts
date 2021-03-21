@@ -12,7 +12,6 @@ export default class Remap {
 
     public updateMode(mode: number) {
         let config: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('remap');
-        this.mode = mode;
         config.update('mode', mode, true);
         if (config.get('changeStatusBarText')) {
             this.statusBar.statusBarTextMode(mode);
@@ -22,37 +21,34 @@ export default class Remap {
         }
     }
 
-    public toggleNormalMode() {
-        let config: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('remap');
-        let mode: number = Number(config.get('mode'));
-        if (mode < 2) {
-            mode = 1 - mode;
-        } else if (mode >= 2) {
-            mode = 0;
+    public normal() {
+        if (this.mode < 2) {
+            this.mode = 1 - this.mode;
+        } else if (this.mode >= 2) {
+            this.mode = 0;
         }
-        this.updateMode(mode);
+        this.updateMode(this.mode);
     }
 
-    public toggleSelectMode() {
-        let config: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('remap');
-        let mode: number = Number(config.get('mode'));
-        if (mode === 2) {
-            mode = 1;
+    public select() {
+        if (this.mode === 2) {
+            this.mode = 1;
         } else {
-            mode = 2;
+            this.mode = 2;
         }
-        this.updateMode(mode);
+        this.updateMode(this.mode);
     }
 
-    public toggleDeleteMode() {
-        let config: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('remap');
-        let mode: number = Number(config.get('mode'));
-        if (mode === 3) {
-            mode = 1;
+    public delete() {
+        if (this.mode === 2) {
+            vscode.commands.executeCommand('deleteLeft');
+            this.mode = 1;
+        } else if (this.mode === 3) {
+            this.mode = 1;
         } else {
-            mode = 3;
+            this.mode = 3;
         }
-        this.updateMode(mode);
+        this.updateMode(this.mode);
     }
 
     public up() {
@@ -143,6 +139,7 @@ export default class Remap {
 
     public find() {
         vscode.commands.executeCommand('actions.find');
+        this.mode = 0;
         this.updateMode(0);
     }
 
@@ -154,11 +151,12 @@ export default class Remap {
         vscode.commands.executeCommand('redo');
     }
 
-    public copy() {
+    public copy() { 
         if (this.mode === 1) {
             vscode.commands.executeCommand('editor.action.clipboardCopyAction');
         } else if (this.mode === 2) {
             vscode.commands.executeCommand('editor.action.clipboardCopyAction');
+            this.mode = 1;
             this.updateMode(1);
         } else if (this.mode === 3) {
             vscode.commands.executeCommand('editor.action.clipboardCopyAction');
@@ -170,6 +168,7 @@ export default class Remap {
             vscode.commands.executeCommand('editor.action.clipboardPasteAction');
         } else if (this.mode === 2) {
             vscode.commands.executeCommand('editor.action.clipboardPasteAction');
+            this.mode = 1;
             this.updateMode(1);
         } else if (this.mode === 3) {
             vscode.commands.executeCommand('editor.action.clipboardPasteAction');
@@ -180,7 +179,8 @@ export default class Remap {
         if (this.mode === 1) {
             vscode.commands.executeCommand('editor.action.clipboardCutAction');
         } else if (this.mode === 2) {
-            vscode.commands.executeCommand('editor.action.clipboardCutAction');
+        vscode.commands.executeCommand('editor.action.clipboardCutAction');
+            this.mode = 1;
             this.updateMode(1);
         } else if (this.mode === 3) {
             vscode.commands.executeCommand('editor.action.clipboardCutAction');
