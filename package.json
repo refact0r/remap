@@ -219,6 +219,11 @@
 				"key": ".",
 				"command": "remap.indent",
 				"when": "config.remap.mode > 0"
+			},
+			{
+				"key": "/",
+				"command": "editor.action.commentLine",
+				"when": "config.remap.mode > 0"
 			}
 		],
 		"configuration": {
