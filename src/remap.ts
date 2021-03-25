@@ -131,7 +131,8 @@ export default class Remap {
         if (this.mode === 1) {
             vscode.commands.executeCommand('editor.action.insertLineAfter');
         } else if (this.mode === 2) {
-            vscode.commands.executeCommand('editor.action.insertLineAfter');
+            vscode.commands.executeCommand('cursorHome');
+            vscode.commands.executeCommand('cursorEndSelect');
         } else if (this.mode === 3) {
             vscode.commands.executeCommand('editor.action.deleteLines');
         }

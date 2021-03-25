@@ -221,7 +221,7 @@
 				"when": "config.remap.mode > 0"
 			},
 			{
-				"key": "/",
+				"key": "'",
 				"command": "editor.action.commentLine",
 				"when": "config.remap.mode > 0"
 			}
