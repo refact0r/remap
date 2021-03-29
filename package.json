@@ -108,122 +108,123 @@
 		"keybindings": [
 			{
 				"key": "Escape",
-				"command": "remap.toggleNormalMode"
+				"command": "remap.toggleNormalMode",
+				"when": "textInputFocus"
 			},
 			{
 				"key": "i",
 				"command": "remap.up",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "j",
 				"command": "remap.left",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "k",
 				"command": "remap.down",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "l",
 				"command": "remap.right",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "u",
 				"command": "remap.leftWord",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "o",
 				"command": "remap.rightWord",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "h",
 				"command": "remap.lineStart",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": ";",
 				"command": "remap.lineEnd",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "a",
 				"command": "remap.toggleSelectMode",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "s",
 				"command": "workbench.action.files.save",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "d",
 				"command": "remap.toggleDeleteMode",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "f",
 				"command": "remap.newLine",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "g",
 				"command": "workbench.action.gotoLine",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "q",
 				"command": "workbench.action.files.save",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "y",
 				"command": "remap.find",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "z",
 				"command": "remap.undo",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "x",
 				"command": "remap.redo",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "c",
 				"command": "remap.copy",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "v",
 				"command": "remap.paste",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "b",
 				"command": "remap.cut",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{	
 				"key": ",",
 				"command": "remap.outdent",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": ".",
 				"command": "remap.indent",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			},
 			{
 				"key": "'",
 				"command": "editor.action.commentLine",
-				"when": "config.remap.mode > 0"
+				"when": "textInputFocus && config.remap.mode > 0"
 			}
 		],
 		"configuration": {
