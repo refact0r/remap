@@ -12,7 +12,6 @@ export default class Remap {
 
     public updateMode(mode: number) {
         let config: vscode.WorkspaceConfiguration = vscode.workspace.getConfiguration('remap');
-        config.update('mode', mode, true);
         if (config.get('changeStatusBarText')) {
             this.statusBar.statusBarTextMode(mode);
         }
@@ -56,6 +55,13 @@ export default class Remap {
             vscode.commands.executeCommand('cursorUp');
         } else if (this.mode === 2) {
             vscode.commands.executeCommand('cursorUpSelect');
+        } else if (this.mode === 3) {
+            let editor: vscode.TextEditor = vscode.window.activeTextEditor as vscode.TextEditor;
+            let position = editor.selection.active;
+            vscode.commands.executeCommand('cursorUp');
+            vscode.commands.executeCommand('editor.action.deleteLines').then(() => {
+                editor.selection = new vscode.Selection(position.line - 1, position.character, position.line - 1, position.character);
+            });
         }
     }
 
@@ -74,6 +80,13 @@ export default class Remap {
             vscode.commands.executeCommand('cursorDown');
         } else if (this.mode === 2) {
             vscode.commands.executeCommand('cursorDownSelect');
+        } else if (this.mode === 3) {
+            let editor: vscode.TextEditor = vscode.window.activeTextEditor as vscode.TextEditor;
+            let position = editor.selection.active;
+            vscode.commands.executeCommand('cursorDown');
+            vscode.commands.executeCommand('editor.action.deleteLines').then(() => {
+                editor.selection = new vscode.Selection(position.line, position.character, position.line, position.character);
+            });
         }
     }
 

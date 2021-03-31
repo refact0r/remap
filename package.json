@@ -3,7 +3,7 @@
 	"displayName": "Remap",
 	"description": "Faster and more efficient VSCode keybindings",
 	"publisher": "refact0r",
-	"version": "0.1.2",
+	"version": "0.1.4",
 	"engines": {
 		"vscode": "^1.54.0"
 	},
@@ -230,11 +230,6 @@
 		"configuration": {
 			"title": "Remap",
 			"properties": {
-				"remap.mode": {
-					"type": "number",
-					"default": 0,
-					"description": "Current mode."
-				},
 				"remap.changeStatusBarColor": {
 					"type": "boolean",
 					"default": true,
