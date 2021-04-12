@@ -1,0 +1,196 @@
+{
+	"name": "remap",
+	"displayName": "Remap",
+	"description": "Faster and more efficient VSCode keybindings",
+	"publisher": "refact0r",
+	"version": "0.2.0",
+	"engines": {
+		"vscode": "^1.54.0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/refact0r/remap.git"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"keybindings": [
+			{
+				"key": "Escape",
+				"command": "remap.toggleNormalMode",
+				"when": "editorTextFocus"
+			},
+			{
+				"key": "s",
+				"command": "remap.toggleSelectMode",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "d",
+				"command": "remap.toggleDeleteMode",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "a",
+				"command": "remap.newLine",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "f",
+				"command": "remap.find",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "g",
+				"command": "remap.goToLine",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "i",
+				"command": "remap.up",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "j",
+				"command": "remap.left",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "k",
+				"command": "remap.down",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "l",
+				"command": "remap.right",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "u",
+				"command": "remap.wordLeft",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "o",
+				"command": "remap.wordRight",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "h",
+				"command": "remap.lineStart",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": ";",
+				"command": "remap.lineEnd",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "z",
+				"command": "remap.undo",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "x",
+				"command": "remap.redo",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "c",
+				"command": "remap.copy",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "v",
+				"command": "remap.paste",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "b",
+				"command": "remap.cut",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": ",",
+				"command": "remap.outdent",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": ".",
+				"command": "remap.indent",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "'",
+				"command": "remap.comment",
+				"when": "editorTextFocus && remap.mode > 0"
+			},
+			{
+				"key": "w",
+				"command": "remap.fold",
+				"when": "editorTextFocus && remap.mode > 0"
+			}
+		],
+		"configuration": {
+			"title": "Remap",
+			"properties": {
+				"remap.changeStatusBarColor": {
+					"type": "boolean",
+					"default": true,
+					"description": "Changes color of status bar based on mode."
+				},
+				"remap.changeStatusBarText": {
+					"type": "boolean",
+					"default": true,
+					"description": "Changes text in status bar based on mode."
+				},
+				"remap.editModeColor": {
+					"type": "string",
+					"default": "",
+					"description": "Color of status bar while in edit mode."
+				},
+				"remap.normalModeColor": {
+					"type": "string",
+					"default": "#1bddcd90",
+					"description": "Color of status bar while in normal mode."
+				},
+				"remap.selectModeColor": {
+					"type": "string",
+					"default": "#7f1bdd90",
+					"description": "Color of status bar while in select mode."
+				},
+				"remap.deleteModeColor": {
+					"type": "string",
+					"default": "#00000090",
+					"description": "Color of status bar while in select mode."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.4",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.54.0",
+		"@typescript-eslint/eslint-plugin": "^4.21.0",
+		"@typescript-eslint/parser": "^4.21.0",
+		"eslint": "^7.19.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"typescript": "^4.1.3",
+		"vscode-test": "^1.5.0"
+	}
+}
